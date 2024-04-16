@@ -7,7 +7,7 @@
 # --------------------------------------------------------------------------------------
 import collections.abc
 from collections import defaultdict
-from typing import Any, ClassVar, MutableMapping, Type
+from typing import Any, ClassVar, Dict, MutableMapping, Type
 
 from ..catom import Member
 from ..coerced import Coerced
@@ -59,7 +59,7 @@ def generate_member_from_type_or_generic(  # noqa C901
     types = extract_types(type_generic)
     parameters = get_args(type_generic)
 
-    m_kwargs: dict[str, Any] = {}
+    m_kwargs: Dict[str, Any] = {}
 
     m_cls: Type[Member]
     if any(
